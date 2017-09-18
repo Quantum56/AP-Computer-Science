@@ -4,12 +4,10 @@
  */
 
 public class HelloWorld {
-
-	// test comment
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		/**
-		 * @param args
-		 */
 		System.out.println("Hello World!");
 	}
 }
