@@ -1,16 +1,15 @@
 
 /**
- *  @author ZackB 
- *  First Program
- *  */
+ * @author ZackB
+ */
 
 public class HelloWorld {
 
-	//test comment
+	// test comment
 	public static void main(String[] args) {
 		/**
 		 * @param args
-		 * */
+		 */
 		System.out.println("Hello World!");
 	}
 }
