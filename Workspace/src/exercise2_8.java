@@ -19,23 +19,23 @@ public class exercise2_8 {
 		String message;
 	    Scanner sc = new Scanner(System.in);
 	    
+	    System.out.println("Point Distance Calculator - Press Enter to initialize");
 	    message = sc.nextLine();
-	    System.out.print("Enter point coordinates:");
 	    
 	    int x1;
-	    System.out.print("Enter x1: ");
+	    System.out.println("Enter x1: ");
 	    x1 = sc.nextInt();
 	    
 	    int x2;
-	    System.out.print("Enter x2: ");
+	    System.out.println("Enter x2: ");
 	    x2 = sc.nextInt();
 	    
 	    int y1;
-	    System.out.print("Enter y1: ");
+	    System.out.println("Enter y1: ");
 	    y1 = sc.nextInt();
 	    
 	    int y2;
-	    System.out.print("Enter y2: ");
+	    System.out.println("Enter y2: ");
 	    y2 = sc.nextInt();
 	    
 	    
