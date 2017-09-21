@@ -39,7 +39,7 @@ public class exercise2_10 {
 
 		double z = Math.sqrt(s * (s - a) * (s - b) * (s - c));
 		Math.round((z * 1.000) / 1.000); // attempt to round to 3 decimals
-		System.out.printf("The area of the triangle is " + z);
+		System.out.printf("The area of the triangle is: " + z);
 	}
 
 	public static String getMessage() {
