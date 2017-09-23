@@ -23,7 +23,7 @@ public class exercise3_2 {
 		year = sc.nextInt();
 		Start:
 		// TODO Auto-generated method stub
-		if ((year % 4 == 0) || (year % 100 != 0) && (year % 400 == 0)) {
+		if ((year % 100 != 0) && (year % 400 == 0) || (year % 4 == 0)) {
 			System.out.format("\n %d IS a leap year\n", year);
 			break Start;
 		}
