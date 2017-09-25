@@ -18,12 +18,25 @@ public class exercise3_6 {
 	 */
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
-		int count;
+		int num, EvenCount = 0, OddCount = 0, ZeroCount;
 		System.out.printf("Enter an integer (enter 0 to quit): \n");
-		count = sc.nextInt();
-		final int LIMIT = count;
-		for (count = 1; count <= LIMIT; count++) {
-			System.out.println(count);
+		num = sc.nextInt();
+		final int LIMIT = num - 1;
+		for (num = 1; num <= LIMIT;) {
+			System.out.println(num);
+		/*while(num != 0)
+			while(num % 2 == 0) {
+			EvenCount++;
+			}
+			while(num % 2 == 0) {
+			OddCount++;
+			} */
+			String number = String.valueOf(num);
+
+			char[] digits1 = number.toCharArray();
+			// or:
+			String[] digits2 = number.split("(?<=.)");
+			System.out.print(digits1);
 			// The program currently reads each number from 0 to its limit
 		}
 	}
