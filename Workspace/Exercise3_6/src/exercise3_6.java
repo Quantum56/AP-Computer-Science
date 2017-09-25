@@ -2,8 +2,6 @@
  * Work on an integer parser that reads number of odd, even and 0 digits.
  */
 
-
-
 /**
  * @author ZackB
  *
