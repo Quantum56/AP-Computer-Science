@@ -12,6 +12,7 @@ import java.applet.*;
 
 public class exercise3_17 extends Applet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * @param args
 	 */
