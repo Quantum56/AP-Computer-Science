@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class exercise3_13 {
 
 	private static Scanner sc;
-
+  
 	/**
 	 * @param args
 	 */
