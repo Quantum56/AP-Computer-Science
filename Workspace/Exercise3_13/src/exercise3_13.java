@@ -21,8 +21,7 @@ public class exercise3_13 {
 		String str = sc.next();
 		int vowels = 0, consonants = 0, spaces = 0, punctuations = 0;
 		char[] vowel = new char[] { 'a', 'e', 'i', 'o', 'u' };
-		char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't',
-				'v', 'w', 'x', 'y', 'z' };
+		char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
 		char[] space = new char[] { ' ' };
 		char[] punct = new char[] { '!', ',', '.', '"', '`' };
 		// first attempt
