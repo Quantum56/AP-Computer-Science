@@ -36,10 +36,10 @@ public class exercise4_6 {
 				if (c == 4) {
 					d = "Diamonds";
 				}
-				System.out.print(a);
-				System.out.print(" of ");
-				System.out.println(d);
-				// System.out.printf(str, " of ", d);
+				// System.out.print(a);
+				// System.out.print(" of ");
+				// System.out.println(d);
+				System.out.format("%d of %s\n", a, d);
 			} else {
 				if (c == 1) {
 					d = "Spades";
@@ -53,35 +53,34 @@ public class exercise4_6 {
 				if (c == 4) {
 					d = "Diamonds";
 				}
-				if (a <= 2 && a >= 10) {
-					if (c == 1) {
-						d = "Spades";
-					} else if (c == 2) {
-						d = "Clubs";
-					} else if (c == 3) {
-						d = "Hearts";
-					} else if (c == 4) {
-						d = "Diamonds";
-					}
-					if (a == 1) {
-						str = "Ace";
-						// System.out.print(str);
-					} else if (a == 11) {
-						str = "Jack";
-						// System.out.print(str);
-					} else if (a == 12) {
-						str = "Queen";
-						// System.out.print(str);
-					} else if (a == 13) {
-						str = "King";
-						// System.out.print(str);
-					}
+				if (c == 1) {
+					d = "Spades";
+				} else if (c == 2) {
+					d = "Clubs";
+				} else if (c == 3) {
+					d = "Hearts";
+				} else if (c == 4) {
+					d = "Diamonds";
 				}
-				System.out.print(str);
-				System.out.print(" of ");
-				System.out.println(d);
-		}
+				if (a == 1) {
+					str = "Ace";
+					// System.out.print(str);
+				} else if (a == 11) {
+					str = "Jack";
+					// System.out.print(str);
+				} else if (a == 12) {
+					str = "Queen";
+					// System.out.print(str);
+				} else if (a == 13) {
+					str = "King";
+					// System.out.print(str);
+				}
+				// System.out.print(str);
+				// System.out.print(" of ");
+				// System.out.println(d);
+				System.out.format("%s of %s\n", str, d);
+			}
 
-	}
+		}
 	}
 }
