@@ -36,11 +36,9 @@ public class exercise4_6 {
 				if (c == 4) {
 					d = "Diamonds";
 				}
-				// System.out.print(a);
-				// System.out.print(" of ");
-				// System.out.println(d);
 				System.out.format("%d of %s\n", a, d);
 			} else {
+			for (int i1 = 0; i1<2; i1++) {
 				if (c == 1) {
 					d = "Spades";
 				}
@@ -64,20 +62,19 @@ public class exercise4_6 {
 				}
 				if (a == 1) {
 					str = "Ace";
-					// System.out.print(str);
-				} else if (a == 11) {
+				} 
+				else if (a == 11) {
 					str = "Jack";
-					// System.out.print(str);
-				} else if (a == 12) {
+				} 
+				else if (a == 12) {
 					str = "Queen";
-					// System.out.print(str);
-				} else if (a == 13) {
+				} 
+				else if (a == 13) {
 					str = "King";
-					// System.out.print(str);
 				}
-				// System.out.print(str);
-				// System.out.print(" of ");
-				// System.out.println(d);
+				if (str == "")
+					str = "Ace";
+			}
 				System.out.format("%s of %s\n", str, d);
 			}
 
