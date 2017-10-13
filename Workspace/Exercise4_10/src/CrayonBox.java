@@ -30,6 +30,10 @@ public class CrayonBox extends Applet {
 		Crayon crayonP = new Crayon(Color.pink, 80, CRAYON_START + 6 * CRAYON_SPACE);
 		Crayon crayonR = new Crayon(Color.red, 75, CRAYON_START + 7 * CRAYON_SPACE);
 		// need to find a way to automate this declaration process
+		page.setColor(Color.yellow);
+		page.fillOval(195, 25, 285, 75);
+		page.setColor(Color.yellow);
+		page.fillRect(195, 60, 285, 120);
 		setBackground(Color.black);
 		setSize(APPLET_WIDTH, APPLET_HEIGHT);
 		crayonC.draw(page);
@@ -42,6 +46,8 @@ public class CrayonBox extends Applet {
 		crayonR.draw(page);
 		page.setColor(Color.yellow);
 		page.fillRect(195, 120, 285, 120);
+		page.setColor(Color.green);
+		page.fillOval(215, 125, 250, 100);
 		page.setColor(Color.black);
 		page.drawString("Crayola", 325, 175);
 	}
