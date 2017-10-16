@@ -40,7 +40,7 @@ public class Bat {
 
 	public int getBatNumLegs() {
 		Random generator = new Random();
-		legs = generator.nextInt(10) + 2;
+		legs = generator.nextInt(10) + 1;
 		return legs;
 	}
 
