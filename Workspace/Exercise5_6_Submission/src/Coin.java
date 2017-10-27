@@ -1,17 +1,16 @@
-import java.util.Random;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Coin implements Lockable {
 	private final int HEADS = 0;
-	private final int TAILS = 1;
+	// private final int TAILS = 1;
 	private int face;
 	private static int passwd;
-	private static Scanner sc = new Scanner(System.in);
-	private static Random gen = new Random();
+	// private static Scanner sc = new Scanner(System.in);
+
 	public static boolean locked;
-	
+
 	public static void main(String[] args) {
-		
+
 	}
 
 	public void setKey(int input) throws Exception {
@@ -24,6 +23,7 @@ public class Coin implements Lockable {
 		if (locked == true) {
 			if (attempt == passwd) {
 				locked = false;
+				System.out.println("Unlocked");
 				return;
 			} else
 				throw new Exception();
@@ -31,10 +31,11 @@ public class Coin implements Lockable {
 	}
 
 	public void lock(int attempt) throws Exception {
-			if (attempt == passwd) {
-				locked = true;
-				return;
-			} else
+		if (attempt == passwd) {
+			locked = true;
+			System.out.println("Locked");
+			return;
+		} else
 			throw new Exception();
 	}
 
@@ -43,17 +44,16 @@ public class Coin implements Lockable {
 	}
 
 	public Coin() throws Exception {
-		System.out.println("Set key: ");
-		int a = sc.nextInt();
-		setKey(a);
-		unlock(a);
 		flip();
-		lock(a);
+		// lock(a);
 	}
 
 	public void flip() {
-		face = (int) (gen.nextInt() * 2);
-/*		System.out.print(face); */
+		if (!locked) {
+			face = (int) (Math.random() * 2);
+			/* System.out.print(face); */
+		} else
+			System.exit(0);
 	}
 
 	public boolean isHeads() {
