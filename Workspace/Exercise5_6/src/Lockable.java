@@ -1,22 +1,22 @@
-import java.util.Scanner;
-
-/**
- * 
- */
-
 /**
  * @author ZackB
  *
  */
-public class Lockable implements Comparable<Object> {
-	private static String INPUT = "";
-	private String passwd = "";
-	private Scanner sc;
-	private boolean locked;
+public interface Lockable {
+	
+	void setKey(int input);
+
+	void lock(int passwd) throws Exception;
+	void unlock(int attempt) throws Exception;
+	boolean locked();
+	
+/*	public static String INPUT = "";
+	public String passwd = "";
+	public Scanner sc = new Scanner(System.in);
+	public boolean locked;
 	// private Object passwdObj = (String) passwd;
 
-	public String setKey() {
-		sc = new Scanner(System.in);
+	public static String setKey() {
 		System.out.println("Input original password: ");
 		String input1 = sc.nextLine();
 		System.out.println("Retype: ");
@@ -28,7 +28,7 @@ public class Lockable implements Comparable<Object> {
 		return INPUT;
 	}
 
-	public void unlock() throws Exception {
+	public static void unlock() throws Exception {
 		System.out.println("Input password: ");
 		String attempt = sc.nextLine();
 		if (attempt.compareTo(passwd) == 0) {
@@ -38,10 +38,10 @@ public class Lockable implements Comparable<Object> {
 			throw new Exception();
 	}
 	
-	public void lock() throws Exception {
-		System.out.println("Press a key to unlock...");
+	public static void lock() throws Exception {
+		System.out.println("Press a key to lock...");
 		if (IsKeyPressed.isWPressed()) {
-			System.out.println("Enter password: ");
+			System.out.println("Enter password to lock: ");
 			String attempt = sc.nextLine();
 			if (attempt == passwd) {
 				return;
@@ -51,12 +51,8 @@ public class Lockable implements Comparable<Object> {
 		locked = true;
 	}
 
-	public boolean locked() {
+	public static boolean locked() {
 		return locked;
 	}
-	
-	public int compareTo(Object arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	*/
 }
