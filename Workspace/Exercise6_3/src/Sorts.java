@@ -1,7 +1,7 @@
 /**
  * 
  */
-import java.lang.System;
+import java.lang.*;
 /**
  * @author student
  *
@@ -24,7 +24,8 @@ public class Sorts {
 			numbers[index] = temp;
 		}
 		
-		numbers = arraycopy(numbers.length - 1, 0);
+		numbers = System.arraycopy(numbers.length - 1, 0);
+		
 		/*
 		for (int i = 0; i < numbers.length; i++) {
 			if (i < (numbers.length - 1) / 2) {
