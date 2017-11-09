@@ -20,7 +20,7 @@ public class exercise6_3 {
 		
 		for (int i = 10; i < sorting.length; i--) {
 			if (i > 0) {
-			System.out.println(sorting[i] + "");		
+			System.out.println(sorting[i] + "");
 			}
 		}
 	}
