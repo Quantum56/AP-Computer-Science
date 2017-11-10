@@ -18,7 +18,7 @@ public class exercise6_3 {
 		int[] sorting = {a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, a.nextInt(100) + 1, };
 		Sorts.selectionSort(sorting);
 		
-		for (int i = 10; i < sorting.length; i--) {
+		for (int i = 0; i < sorting.length; i++) {
 			if (i > 0) {
 			System.out.println(sorting[i] + "");
 			}

@@ -1,9 +1,12 @@
+// import java.util.Arrays;
+// import java.util.Collections;
+
 /**
  * 
  */
-import java.lang.*;
+
 /**
- * @author student
+ * @author ZackB
  *
  */
 public class Sorts {
@@ -24,7 +27,17 @@ public class Sorts {
 			numbers[index] = temp;
 		}
 		
-		numbers = System.arraycopy(numbers.length - 1, 0);
+		for (int i = 0; i < numbers.length / 2; i++) {
+			  int temp1 = numbers[i];
+			  numbers[i] = numbers[numbers.length - 1 - i];
+			  numbers[numbers.length - 1 - i] = temp1;
+		}
+	}
+}
+//		Collections.reverse(Arrays.asList(numbers));
+		
+//		List<int[]> Numbers = Arrays.asList(numbers);
+//		Collections.reverse(Numbers);
 		
 		/*
 		for (int i = 0; i < numbers.length; i++) {
@@ -44,6 +57,3 @@ public class Sorts {
 			}
 		}
 		*/
-		
-	}
-}
