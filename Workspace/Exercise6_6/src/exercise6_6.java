@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -10,49 +11,73 @@ public class exercise6_6 {
 	 * @param args
 	 */
 	private static Scanner sc = new Scanner(System.in);
+	public static Account s;
+	private static String exit = "Y";
+	private static DecimalFormat fmt = new DecimalFormat("#.00");
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ArrayList<Integer> accountNumbers = new ArrayList<Integer>();
-		// ArrayList<String> holders = new ArrayList<String>();
-		// ArrayList<Double> balances = new ArrayList<Double>();
 		System.out.println("Create a new account? (Y/N)");
-		String a = sc.next();
-		if (a == "Y" || a == "y") {
+		String z = sc.nextLine();
+		if (z.equals("Y") || z.equals("y")) {
 			System.out.println("Input account holders name: ");
 			String name = sc.nextLine();
 			System.out.println("Input initial deposit: ");
 			double initial = sc.nextDouble();
-			Account s = new Account(name, initial);
+			System.out.println("Input desired account number: ");
+			int accountNum = sc.nextInt();
+			s = new Account(name, initial, accountNum);
+		} else {
+			System.exit(0);
+		}
 
-			System.out.println(
-					"Type 'a' for account number, 'b' for balance, 'd' for deposit, and 'w' for withdrawal. (q to quit) ");
-			String input = sc.nextLine();
-			if (input == "a") {
-				System.out.println("Input account holder's name: ");
-				String holdername = sc.nextLine();
-				s.getAccountNumber(holdername);
-			} else if (input == "b") {
-				System.out.println("Input account holder's name: ");
-				String holdername = sc.nextLine();
-				s.getBalance(holdername);
-			} else if (input == "d") {
-				System.out.println("Input account holder's name: ");
-				String holdername = sc.nextLine();
+		do {
+			System.out.println("Enter account number: ");
+			int acctNumber = sc.nextInt();
+			System.out.println("Welcome " + s.getAccountName(acctNumber) + ". ");
+			System.out.println("Type '1' for holder's name, '2' for balance, '3' for deposit, and '4' for withdrawal. (5 to quit) ");
+			int input = sc.nextInt();
+			if (input == 1) {
+				System.out.println("Input account number: ");
+				int acctNum = sc.nextInt();
+				String a = s.getAccountName(acctNum);
+				System.out.println(a + " is the holder's name.");
+				System.out.println("Return to menu? (Y/N)");
+				exit = sc.nextLine();
+				continue;
+			} else if (input == 2) {
+				System.out.println("Input account number: ");
+				int acctNum = sc.nextInt();
+				double a = s.getBalance(acctNum);
+				System.out.println("Balance: " + fmt.format(a) + "$");
+				System.out.println("Return to menu? (Y/N)");
+				exit = sc.nextLine();
+				continue;
+			} else if (input == 3) {
+				System.out.println("Input account number: ");
+				int acctNum = sc.nextInt();
 				System.out.println("Input deposit (must be over $2.00): ");
 				double amount = sc.nextDouble();
-				s.deposit(amount, holdername);
-			} else if (input == "w") {
-				System.out.println("Input account holder's name: ");
-				String holdername = sc.nextLine();
+				double a = s.deposit(amount, acctNum);
+				System.out.println(fmt.format(a) + " is the account's current balance.");
+				System.out.println("Return to menu? (Y/N)");
+				exit = sc.nextLine();
+				continue;
+			} else if (input == 4) {
+				System.out.println("Input account number: ");
+				int acctNum = sc.nextInt();
 				System.out.println("Input withdrawal: ");
 				double amount = sc.nextDouble();
-				s.withdraw(amount, holdername);
-			} else if (input == "q")
+				double a = s.withdraw(amount, acctNum);
+				System.out.println(fmt.format(a) + " is the account's current balance.");
+				System.out.println("Return to menu? (Y/N)");
+				exit = sc.nextLine();
+				continue;
+			} else if (input == 5) {
 				System.exit(0);
-
-		} else
-			System.exit(0);
+			} else
+				System.exit(0);
+		} while (exit == "y" || exit == "Y");
+		// System.out.println("Loop done.");
 	}
-
 }
