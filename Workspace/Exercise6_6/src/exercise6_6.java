@@ -34,49 +34,51 @@ public class exercise6_6 {
 		do {
 			System.out.println("Enter account number: ");
 			int acctNumber = sc.nextInt();
-			System.out.println("Welcome " + s.getAccountName(acctNumber) + ". ");
-			System.out.println("Type '1' for holder's name, '2' for balance, '3' for deposit, and '4' for withdrawal. (5 to quit) ");
-			int input = sc.nextInt();
-			if (input == 1) {
-				System.out.println("Input account number: ");
-				int acctNum = sc.nextInt();
-				String a = s.getAccountName(acctNum);
-				System.out.println(a + " is the holder's name.");
-				System.out.println("Return to menu? (Y/N)");
-				exit = sc.nextLine();
-				continue;
-			} else if (input == 2) {
-				System.out.println("Input account number: ");
-				int acctNum = sc.nextInt();
-				double a = s.getBalance(acctNum);
-				System.out.println("Balance: " + fmt.format(a) + "$");
-				System.out.println("Return to menu? (Y/N)");
-				exit = sc.nextLine();
-				continue;
-			} else if (input == 3) {
-				System.out.println("Input account number: ");
-				int acctNum = sc.nextInt();
-				System.out.println("Input deposit (must be over $2.00): ");
-				double amount = sc.nextDouble();
-				double a = s.deposit(amount, acctNum);
-				System.out.println(fmt.format(a) + " is the account's current balance.");
-				System.out.println("Return to menu? (Y/N)");
-				exit = sc.nextLine();
-				continue;
-			} else if (input == 4) {
-				System.out.println("Input account number: ");
-				int acctNum = sc.nextInt();
-				System.out.println("Input withdrawal: ");
-				double amount = sc.nextDouble();
-				double a = s.withdraw(amount, acctNum);
-				System.out.println(fmt.format(a) + " is the account's current balance.");
-				System.out.println("Return to menu? (Y/N)");
-				exit = sc.nextLine();
-				continue;
-			} else if (input == 5) {
-				System.exit(0);
-			} else
-				System.exit(0);
+			if (s.getAccountName(acctNumber) != null) {
+				System.out.println("Welcome " + s.getAccountName(acctNumber) + ". ");
+				System.out.println("Type '1' for holder's name, '2' for balance, '3' for deposit, and '4' for withdrawal. (5 to quit) ");
+				int input = sc.nextInt();
+				if (input == 1) {
+					System.out.println("Input account number: ");
+					int acctNum = sc.nextInt();
+					String a = s.getAccountName(acctNum);
+					System.out.println(a + " is the holder's name.");
+					System.out.println("Return to menu? (Y/N)");
+					exit = sc.nextLine();
+					continue;
+				} else if (input == 2) {
+					System.out.println("Input account number: ");
+					int acctNum = sc.nextInt();
+					double a = s.getBalance(acctNum);
+					System.out.println("Balance: " + fmt.format(a) + "$");
+					System.out.println("Return to menu? (Y/N)");
+					exit = sc.nextLine();
+					continue;
+				} else if (input == 3) {
+					System.out.println("Input account number: ");
+					int acctNum = sc.nextInt();
+					System.out.println("Input deposit (must be over $2.00): ");
+					double amount = sc.nextDouble();
+					double a = s.deposit(amount, acctNum);
+					System.out.println(fmt.format(a) + " is the account's current balance.");
+					System.out.println("Return to menu? (Y/N)");
+					exit = sc.nextLine();
+					continue;
+				} else if (input == 4) {
+					System.out.println("Input account number: ");
+					int acctNum = sc.nextInt();
+					System.out.println("Input withdrawal: ");
+					double amount = sc.nextDouble();
+					double a = s.withdraw(amount, acctNum);
+					System.out.println(fmt.format(a) + " is the account's current balance.");
+					System.out.println("Return to menu? (Y/N)");
+					exit = sc.nextLine();
+					continue;
+				} else if (input == 5) {
+					System.exit(0);
+				} else
+					System.exit(0);
+			}
 		} while (exit == "y" || exit == "Y");
 		// System.out.println("Loop done.");
 	}
