@@ -8,14 +8,12 @@ public class exercise7_2 {
 	private static Scanner sc = new Scanner(System.in);
 	private static Object[] doctorInfo, nurseInfo, administratorInfo, surgeonInfo, receptionistInfo, janitorInfo;
 	private static String exit = "Y";
-	private static Hospital name;
 	private static String doctorName;
 	private static String nurseName;
 	private static String administratorName;
 	private static String surgeonName;
 	private static String receptionistName;
 	private static String janitorName;
-	private static int numTimes = 0;
 
 	/**
 	 * @param args
@@ -60,20 +58,10 @@ public class exercise7_2 {
 			janitorName = sc.nextLine();
 			janitorInfo[1] = janitorName;
 
-			name = new Hospital(doctorInfo, nurseInfo, administratorInfo, surgeonInfo, receptionistInfo, janitorInfo);
+			new Hospital(doctorInfo, nurseInfo, administratorInfo, surgeonInfo, receptionistInfo, janitorInfo, name0);
 			System.out.println("Add more people? (y/n)");
 			exit = sc.nextLine();
-			numTimes = 1;
 		} while (exit != "n" || exit != "N");
-		while (numTimes > 0) {
-			name.examine(name.getDoctorName(numTimes));
-			name.assist(name.getNurseName(numTimes));
-			name.administrate(name.getAdministratorName(numTimes));
-			name.operate(name.getSurgeonName(numTimes));
-			name.manage(name.getReceptionistName(numTimes));
-			name.sanatize(name.getJanitorName(numTimes));
-			numTimes -= 1;
-		}
 	}
 
 }
