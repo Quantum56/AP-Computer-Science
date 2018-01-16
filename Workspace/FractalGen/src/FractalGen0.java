@@ -6,14 +6,14 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class FractalGen extends JApplet {
+public class FractalGen0 extends JApplet {
 	private static final long serialVersionUID = 1L;
 	private static double sinAngle = Math.sin(60 * (Math.PI / 180)); // -0.866025403784438646763723170752936183471402626905190 = actual value (significant)
 	int level = 0;
 
 	public void init() {
 		setSize(800, 600);
-		this.setBackground(Color.black);
+		this.setBackground(Color.BLACK);
 		String levelStr = JOptionPane.showInputDialog("Enter the recursion depth: ");
 		int angle = Integer.parseInt(JOptionPane.showInputDialog("Enter angle in degrees (forms unique snowflake generation): "));
 		sinAngle = Math.sin(angle * (Math.PI / 180));
@@ -21,23 +21,18 @@ public class FractalGen extends JApplet {
 	}
 
 	public void paint(Graphics page) {
-		Point pointOne = new Point(120, 250);
-		Point pointTwo = new Point(225, 450); // reusing Points from java sample recursion
-		Point pointThree = new Point(425, 450);
-		Point pointFour = new Point(525, 250);
-		Point pointFive = new Point(425, 75);
-		Point pointSix = new Point(225, 75);
+		Point pointOne = new Point(120, 320);
+		Point pointTwo = new Point(440, 320); // reusing Points from java sample recursion
+		Point pointThree = new Point(280, 40);
 
-		drawSnowflake(page, level, pointOne, pointTwo, pointThree, pointFour, pointFive, pointSix);
+		drawSnowflake(page, level, pointOne, pointTwo, pointThree);
 	}
 
-	private void drawSnowflake(Graphics page, int level, Point p1, Point p2, Point p3, Point p4, Point p5, Point p6) {
+	private void drawSnowflake(Graphics page, int level, Point p1, Point p2, Point p3) {
 		drawSegment(page, level, p1, p2); // draw 3 lines to make a triangle
 		drawSegment(page, level, p2, p3);
-		drawSegment(page, level, p3, p4);
-		drawSegment(page, level, p4, p5);
-		drawSegment(page, level, p5, p6);
-		drawSegment(page, level, p6, p1);
+		drawSegment(page, level, p3, p1);
+		drawSegment(page, level, p3, p1);
 	}
 
 	private void drawSegment(Graphics page, int level, Point pOne, Point pTwo) {
@@ -45,7 +40,6 @@ public class FractalGen extends JApplet {
 			page.drawLine(pOne.x, pOne.y, pTwo.x, pTwo.y);
 		}
 		if (level >= 1) {
-			page.setColor(Color.green);
 			Point distance = new Point((pTwo.x - pOne.x) / 3, (pTwo.y - pOne.y) / 3);
 			Point pA = new Point(pOne.x + distance.x, pOne.y + distance.y);
 			Point pB = new Point(pTwo.x - distance.x, pTwo.y - distance.y);
