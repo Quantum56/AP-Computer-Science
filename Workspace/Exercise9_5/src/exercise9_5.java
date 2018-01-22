@@ -19,7 +19,7 @@ public class exercise9_5 {
 	private static Random gen = new Random();
 
 	public static void main(String[] args) throws InterruptedException {
-		do {
+		while (run != false && main.isReady()) {
 			String name;
 			int value = 0, time = 0;
 			System.out.println("Enter the customer's name: ");
@@ -37,7 +37,7 @@ public class exercise9_5 {
 			} else {
 				run = false;
 			}
-		} while (run != false && main.isReady());
+		}
 		for (int i = 0; i < main.queueSize(); i++) {
 			System.out.println("Customer " + main.getCustomerName() + "is done paying.");
 			main.remove();
